@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    cout<<"Before swapping"<<endl<< "A="<<a<<"  "<<"B="<<b<<endl;
+    b=a^b;
+    a=b^a;
+    b=b^a;
+    cout<<"After swapping"<<endl<< "A="<<a<<"  "<<"B="<<b<<endl;
+    
+}
