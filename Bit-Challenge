@@ -1,0 +1,40 @@
+/*
+>>    Get Bit 
+>>    Set Bit 
+>>    Clear Bit
+>>    Update Bit 
+*/
+
+#include<iostream>
+using namespace std;
+int getbit(int n,int pos)
+{
+    return (n & (1<<(pos-1)))!=0;
+}
+int setbit(int n, int pos)
+{
+   n=n|(1<<(pos-1));
+    return n;
+}
+int clearbit(int n,int pos)
+{
+    n=~(1<<(pos-1)) & n;
+    return (n);
+}
+int updatebit(int n,int pos,int bit)
+{
+    n=clearbit(n,pos);
+    return (n|(bit<<(pos-1)));
+}
+int main()
+{
+    int n,pos;
+    cin>>n>>pos;
+    cout<<getbit(n,pos)<<endl; 
+    cout<<setbit(n,pos)<<endl;
+    cout<<clearbit(n,pos)<<endl;
+    cout<<"Enter Number , position and bit (0 or 1)"<<endl;
+    int bit=0;
+    cin>>n>>pos>>bit;
+    cout<<updatebit(n,pos,bit)<<endl;
+}
