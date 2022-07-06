@@ -1,0 +1,21 @@
+/*
+Write a program to count the number of ones in binary representation of a number. */
+
+#include<iostream>
+using namespace std;
+int ones_count(int n)
+{
+    int count=0;
+    while(n)
+    {
+        n=n & (n-1);
+        count+=1;
+    }
+    return count;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<ones_count(n);
+}
